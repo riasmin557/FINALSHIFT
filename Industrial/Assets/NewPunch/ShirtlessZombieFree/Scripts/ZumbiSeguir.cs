@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.AI;
 
-public class NewMonoBehaviourScript : MonoBehaviour
+public class ZumbiSeguir : MonoBehaviour
 {
     public Transform player;
     public NavMeshAgent agent;
@@ -24,10 +24,13 @@ public class NewMonoBehaviourScript : MonoBehaviour
 
         if (distacia > distanciaAtaque)
         {
-            agent.SetDestination(player.position);
-            anim.SetBool("Andar",true);
+            if (distacia < 10f)
+            {
+                agent.SetDestination(player.position);
+                anim.SetBool("Andar", true);
+            }
         }
-        else
+        else 
         {
             agent.SetDestination(transform.position);
             anim.SetBool("Andar", false);
@@ -35,5 +38,12 @@ public class NewMonoBehaviourScript : MonoBehaviour
         }
 
        
+    }
+
+
+    public void Dano() {
+
+        Debug.Log("Ataque");
+    
     }
 }
