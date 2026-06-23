@@ -139,6 +139,7 @@ MonoBehaviour:
   player: {fileID: 793218101}
   agent: {fileID: 128503112}
   distanciaAtaque: 2
+  jogador: {fileID: 1121279963}
 --- !u!195 &128503112
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -322,6 +323,26 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4207293392497186, guid: 11aaea5348574644a9eb4f4504fcce3f, type: 3}
   m_PrefabInstance: {fileID: 1980858341}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1121279957 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1773623360729482, guid: 11aaea5348574644a9eb4f4504fcce3f, type: 3}
+  m_PrefabInstance: {fileID: 1980858341}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1121279963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1121279957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a8f9c554f24b5346b4cee0899eca009, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VidaPlayer
+  vidaMaxima: 100
+  vidaAtual: 0
+  barraVida: {fileID: 274148106}
 --- !u!1 &1199892791
 GameObject:
   m_ObjectHideFlags: 0
@@ -816,7 +837,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1773623360729482, guid: 11aaea5348574644a9eb4f4504fcce3f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1121279963}
   m_SourcePrefab: {fileID: 100100000, guid: 11aaea5348574644a9eb4f4504fcce3f, type: 3}
 --- !u!1 &2064566442
 GameObject:

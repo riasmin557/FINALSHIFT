@@ -8,6 +8,8 @@ public class ZumbiSeguir : MonoBehaviour
     private Animator anim;
 
     public float distanciaAtaque = 2f;
+
+    public VidaPlayer jogador;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -43,7 +45,8 @@ public class ZumbiSeguir : MonoBehaviour
 
     public void Dano() {
 
-        Debug.Log("Ataque");
+        jogador.ReceberDano(10f);
+        Debug.Log("Você foi atacado!");
     
     }
 }
