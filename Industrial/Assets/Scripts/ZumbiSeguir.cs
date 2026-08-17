@@ -10,7 +10,7 @@ public class ZumbiSeguir : MonoBehaviour
     public float distanciaAtaque = 2f;
 
     public VidaPlayer jogador;
-    public HitboxAtaque hitbox;
+   
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -21,7 +21,7 @@ public class ZumbiSeguir : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
 
-        hitbox.gameObject.SetActive(false);
+       
 
     }
 
@@ -49,15 +49,7 @@ public class ZumbiSeguir : MonoBehaviour
 
     }
 
-    public void AtivarHitbox()
-    {
-        hitbox.gameObject.SetActive(true);
-    }
-
-    public void DesativarHitbox()
-    {
-        hitbox.gameObject.SetActive(false);
-    }
+   
 }
 
     
