@@ -11,7 +11,7 @@ public class ZumbiSeguir : MonoBehaviour
 
     public VidaPlayer jogador;
     public HitboxAtaque hitbox;
-    
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -28,7 +28,7 @@ public class ZumbiSeguir : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float distacia=
+        float distacia =
             Vector3.Distance(transform.position, player.position);
 
         if (distacia > distanciaAtaque)
@@ -39,25 +39,14 @@ public class ZumbiSeguir : MonoBehaviour
                 anim.SetBool("Andar", true);
             }
         }
-        else 
+        else
         {
             agent.SetDestination(transform.position);
             anim.SetBool("Andar", false);
             anim.SetTrigger("Attack");
         }
 
-       
-    }
 
-
-    public void Dano() {
-        if (hitbox.jogadorNaArea==true)
-        {
-            jogador.ReceberDano(10f);
-            Debug.Log("Você foi atacado!");
-        }
-        
-    
     }
 
     public void AtivarHitbox()
@@ -70,3 +59,7 @@ public class ZumbiSeguir : MonoBehaviour
         hitbox.gameObject.SetActive(false);
     }
 }
+
+    
+
+    
