@@ -7,6 +7,7 @@ public class HitboxAtaque : MonoBehaviour
 
     public VidaPlayer jogador;
     public HitboxAtaque hitbox;
+    public Transform hitboxTransform;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -27,12 +28,11 @@ public class HitboxAtaque : MonoBehaviour
 
     public void Dano()
     {
-        if (hitbox.jogadorNaArea == true)
+        if (Physics.OverlapBox(hitboxTransform.position,new Vector3(1,1,1),).Length>0)
         {
             jogador.ReceberDano(10f);
             Debug.Log("Você foi atacado!");
         }
-
 
     }
 
