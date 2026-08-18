@@ -7,6 +7,7 @@ public class HitboxAtaque : MonoBehaviour
 
     public VidaPlayer jogador;
     public Transform hitboxTransform;
+    public LayerMask layers;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -27,7 +28,7 @@ public class HitboxAtaque : MonoBehaviour
 
     public void Dano()
     {
-        if (Physics.OverlapBox(hitboxTransform.position,new Vector3(1,1,1),hitboxTransform.rotation).Length>0)
+        if (Physics.OverlapBox(hitboxTransform.position,new Vector3(1,1,1),hitboxTransform.rotation,layers).Length>0)
         {
             jogador.ReceberDano(10f);
             Debug.Log("Você foi atacado!");

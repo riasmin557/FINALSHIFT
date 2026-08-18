@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 public class VidaPlayer : MonoBehaviour
@@ -9,11 +10,15 @@ public class VidaPlayer : MonoBehaviour
 
     public Image barraVida;
 
+    public GameObject gameOver;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         vidaAtual = vidaMaxima;
         AtualizarBarra();
+
+        gameOver.SetActive(false);
     }
 
     public void ReceberDano(float dano)
@@ -26,11 +31,32 @@ public class VidaPlayer : MonoBehaviour
         }
 
         AtualizarBarra();
+
+        if (vidaAtual <= 0)
+        {
+            Morrer();
+        }
     }
 
     void AtualizarBarra()
     {
         barraVida.fillAmount = vidaAtual / vidaMaxima;
+    }
+
+    void Morrer()
+    {
+        Debug.Log("O jogador morreu!");
+
+        gameOver.SetActive(true);
+
+        Time.timeScale = 0f;
+    }
+
+    public void ReiniciarJogo()
+    {
+        Time.timeScale = 1f;
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
 
