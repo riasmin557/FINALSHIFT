@@ -49,14 +49,15 @@ public class VidaPlayer : MonoBehaviour
 
         gameOver.SetActive(true);
 
-        Time.timeScale = 0f;
+        
     }
 
     public void ReiniciarJogo()
     {
-        Time.timeScale = 1f;
+       
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Debug.Log("Botao apertado");
     }
 }
 
