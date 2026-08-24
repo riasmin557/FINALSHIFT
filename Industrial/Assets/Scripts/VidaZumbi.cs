@@ -10,9 +10,9 @@ public class VidaZumbi : MonoBehaviour
         vidaAtual = vidaMax;
     }
 
-    public void ReceberDano(float dano)
+    public void ReceberAtaque(float ataque)
     {
-        vidaAtual -= dano;
+        vidaAtual -= ataque;
 
         if (vidaAtual <= 0)
         {
