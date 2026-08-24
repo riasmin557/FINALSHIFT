@@ -28,6 +28,11 @@ public class ZumbiSeguir : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (agent == null || !agent.enabled || !agent.isOnNavMesh)
+        {
+            return;
+        }
+
         float distacia =
             Vector3.Distance(transform.position, player.position);
 

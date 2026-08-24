@@ -12,6 +12,8 @@ public class VidaPlayer : MonoBehaviour
 
     public GameObject gameOver;
 
+    public GameObject Player;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -48,8 +50,11 @@ public class VidaPlayer : MonoBehaviour
         Debug.Log("O jogador morreu!");
 
         gameOver.SetActive(true);
+        Player.SetActive(false);
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
 
-        
+
     }
 
     public void ReiniciarJogo()
