@@ -73,6 +73,8 @@ public class VidaZumbi : MonoBehaviour
         // Volta para a posição inicial
         transform.position = posicaoInicial;
 
+        vidaAtual= vidaMax;
+
         // Ativa novamente a aparência
         foreach (Renderer renderizador in renderizadores)
         {
@@ -94,8 +96,5 @@ public class VidaZumbi : MonoBehaviour
        
     }
 
-    public void ResetarVida()
-    {
-        vidaAtual = vidaMax;
-    }
+    
 }
