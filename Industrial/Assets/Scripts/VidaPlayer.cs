@@ -59,11 +59,17 @@ public class VidaPlayer : MonoBehaviour
 
     public void ReiniciarJogo()
     {
-       
+
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         Debug.Log("Botao apertado");
     }
-}
 
+    public void Recuperar()
+    {
+        vidaAtual = vidaMaxima;
+        AtualizarBarra();
+
+    }
+}
     
